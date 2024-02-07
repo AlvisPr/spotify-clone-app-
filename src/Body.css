@@ -1,0 +1,9 @@
+.body{
+height: 100vh; 
+background: linear-gradient( rgb(91, 87, 115), rgba(0,0,0,1));
+flex: 0.8;
+font-size: 24px;
+color: white;
+font-weight: 800;
+padding:30px; 
+}
