@@ -2,10 +2,11 @@
 align-items: center;
 display: flex;
 color: grey; 
-height: 40px;
 padding: 10px;
 cursor: pointer;
 transition: 200ms color ease-in;
+font-size: 16px;
+
 }
 
 .sidebarOption:hover{
@@ -16,3 +17,16 @@ color: white;
     padding-left: 10px;
     padding-right: 10px;
 }
+
+.sidebarOption > p{
+ margin-top: 10px;
+ font-size: 16px;
+ font-weight: 500;
+}
+
+.sidebarOption:hover{
+    background-color: rgba(113, 113, 113, 0.1);
+    border-radius: 10px;
+   
+}
+

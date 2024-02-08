@@ -32,18 +32,26 @@ function App() {
     spotify.setAccessToken(_token); // now we can set up the token inside the spotify object 
     spotify.getMe().then(user => {
       console.log('SHOW ME THR USER', user); 
-
       console.log(spotify.__proto__); 
-
      dispatch({
       type: 'SET_USER', 
       user:user
      });
+    });
 
-    })
+
+    spotify.getUserPlaylists().then((playlists)=> {
+      console.log(playlists); 
+      dispatch({
+        type: "SET_PLAYLISTS", 
+        playlists: playlists
+      }); 
+     });
+
     }
    }, []);
    
+
    console.log('🧔' , user); 
    console.log('🎅', token);
 
