@@ -8,17 +8,17 @@ import { useDataLayerValue } from './DataLayer';
 
 
 const spotify = new SpotifyWebApi(); //setting up a new instance of object 
- 
+
 
 function App() {
-   const [{user, token}, dispatch] = useDataLayerValue(); //Pulling out information from data layer
 
+   console.log(spotify); 
+   const [{user, token}, dispatch] = useDataLayerValue(); //Pulling out information from data layer
 
    //Run code based on given condition  
    useEffect(()=>{
     const hash = getTokenFromUrl(); 
     window.location.hash = "";
-    
     
     const _token = hash.access_token; 
 
@@ -47,6 +47,17 @@ function App() {
         playlists: playlists
       }); 
      });
+
+    spotify.getPlaylist('37i9dQZEVXcV9l0trIB2UV').then(response => {
+      dispatch({
+        type: "SET_DISCOVER_WEEKLY", 
+        discover_weekly: response
+      })
+    }
+      
+      )
+
+
 
     }
    }, []);
