@@ -4,7 +4,8 @@ import "./Body.css";
 import {useDataLayerValue} from "./DataLayer"; 
 import PlayCircleFilledIcon from '@mui/icons-material/PlayCircleFilled';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import MoreHorizRoundedIcon from '@mui/icons-material/MoreHorizRounded';
+import Songrow from './Songrow';
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 
 
 function Body({ spotify }) {
@@ -24,7 +25,12 @@ function Body({ spotify }) {
         <div className='body__icons'>
           <PlayCircleFilledIcon className='body__shuffle'/>
           <FavoriteIcon fontSize='large'/>
-          <MoreHorizRoundedIcon/>
+          <MoreHorizIcon/>
+        </div>
+        <div className='songRowScroll'>
+        {discover_weekly?.tracks.items.map(item=>(
+          <Songrow track={item.track}/>
+        ))}
         </div>
       </div>
     </div>

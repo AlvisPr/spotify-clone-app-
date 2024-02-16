@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import SpotifyWebApi from 'spotify-web-api-js'; // Importing Spotify web appi 
 import Player from './Player';
 import { useDataLayerValue } from './DataLayer';
-
+import Body from './Body';
 
 const spotify = new SpotifyWebApi(); //setting up a new instance of object 
 
@@ -49,6 +49,7 @@ function App() {
      });
 
     spotify.getPlaylist('37i9dQZEVXcV9l0trIB2UV').then(response => {
+     if(response.ok){}
       dispatch({
         type: "SET_DISCOVER_WEEKLY", 
         discover_weekly: response
@@ -70,6 +71,7 @@ function App() {
     <div className="app">
      {token?(<Player spotify={spotify}/>) : (<Login/>)}
     </div>
+    
   );
 }
 

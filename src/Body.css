@@ -61,3 +61,10 @@ margin-bottom: 10px;
     margin: 20px -30px; 
 
 }
+
+
+.songRowScroll{
+    height: 50vh;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
